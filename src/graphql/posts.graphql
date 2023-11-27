@@ -1,0 +1,23 @@
+query posts {
+  poc1_posts {
+    title
+    body
+    status
+    id
+    is_public
+    uri
+    created_at
+  }
+}
+
+query posts_by_uri($uri: String!) {
+  poc1_posts(where: {uri: {_eq: $uri}}) {
+    uri
+    body
+    created_at
+    id
+    is_public
+    status
+    title
+  }
+}
